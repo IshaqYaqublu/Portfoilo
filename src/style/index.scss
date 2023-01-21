@@ -1,0 +1,24 @@
+@import "reset";
+// @import "fonts";
+// @import "variables";
+html,
+body {
+  font-size: 100% !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif !important;
+  background-color: #fcfdfd !important;
+  line-height: 1.3 !important;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.active {
+  color: #fff !important;
+  text-shadow: 2px 2px 4px #000000;
+}
