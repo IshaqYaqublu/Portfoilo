@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import Cover from "shared/modules/Cover";
 import { Urls } from "shared/constants/url";
 import { Route, Routes } from "react-router-dom";
@@ -22,6 +22,7 @@ import Home from "./Home";
 const Router = () => {
   return (
     // <Suspense fallback={<Spinner />}>
+
     <Aux>
       <SideMenu />
       <Cover>

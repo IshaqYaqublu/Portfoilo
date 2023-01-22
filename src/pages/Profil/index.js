@@ -10,7 +10,7 @@ const Profil = () => {
       <h1>
         <Typewriter
           options={{
-            strings: ["Yaqublu Ishaq"],
+            strings: ["Ishaq Yaqublu "],
             autoStart: true,
             loop: true,
           }}
