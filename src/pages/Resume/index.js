@@ -1,9 +1,12 @@
-import React from 'react'
+import * as React from "react";
+import styles from "./Resume.module.scss";
+import TimeLine from "shared/components/TimeLine";
 
-const Resume = () => {
+export default function Resume() {
   return (
-    <div>Resume</div>
-  )
+    <div className={styles.Resume}>
+      <h1 className={styles.ResumeTitle}> Resume</h1>
+      <TimeLine />
+    </div>
+  );
 }
-
-export default Resume

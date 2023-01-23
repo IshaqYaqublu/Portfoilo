@@ -1,0 +1,19 @@
+.Resume {
+  &Title {
+    font-weight: 500;
+    font-size: 50px;
+    display: inline;
+    position: relative;
+    font-family: sans-serif;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 25%;
+      left: 0;
+      bottom: -5px;
+      height: 8px;
+      background-color: #fb8500;
+      border-radius: 20px;
+    }
+  }
+}
