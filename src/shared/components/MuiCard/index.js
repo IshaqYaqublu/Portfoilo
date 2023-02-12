@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-const MuiCard = ({ image, name, details }) => {
+const MuiCard = ({ image, name, details, onClick }) => {
   return (
     <Card sx={{ maxWidth: 250, borderRadius: 8, textAlign: "center" }}>
       <CardActionArea>
@@ -25,7 +25,12 @@ const MuiCard = ({ image, name, details }) => {
         </CardContent>
       </CardActionArea>
       <CardActions sx={{ justifyContent: "center" }}>
-        <Button variant="contained" size="small" color="warning">
+        <Button
+          onClick={onClick}
+          variant="contained"
+          size="small"
+          color="warning"
+        >
           Sil
         </Button>
       </CardActions>

@@ -12,6 +12,7 @@ const Portfolio = () => {
   const [search, setSearch] = React.useState("");
   const [isLoading, setisLoading] = React.useState(true);
   const { register, handleSubmit } = useForm({ defaultValues: { search: "" } });
+  console.log(user, "user");
 
   React.useEffect(() => {
     axios
@@ -26,18 +27,24 @@ const Portfolio = () => {
   const filterUser = user?.filter((person) =>
     person.name.first.toLowerCase().includes(search.toLowerCase())
   );
+  const handleDeleted = (id) => {
+    const data = user?.filter((item) => item?.id?.value !== id);
+    setUser(data);
+  };
   return (
     <div className={styles.Portfolio}>
       <h1 className={styles.PortfolioTitle}>Portfoilo</h1>
       <div className={styles.PortfolioForm}>
-        <form onSubmit={handleSubmit((data) => console.log(data))}>
+        <form
+          className="mt-5"
+          onSubmit={handleSubmit((data) => console.log(data))}
+        >
           <TextField
             type="text"
             {...register("search", { required: true })}
             placeholder="Ad daxil edin.."
             onChange={(e) => setSearch(e.target.value)}
           />
-          <Button type="submit"> Search</Button>
         </form>
       </div>
       <div className={styles.PortfolioCard}>
@@ -51,6 +58,7 @@ const Portfolio = () => {
               details={item?.email}
               image={item?.picture?.medium}
               name={item?.name?.first + item?.name?.last}
+              onClick={() => handleDeleted(item?.id?.value)}
             />
           ))}
         </RenderIf>
