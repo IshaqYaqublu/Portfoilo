@@ -1,32 +1,30 @@
-export const mainButtons = [
+import {
+  faAddressCard,
+  faCalendarCheck,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export const mainAbout = [
   {
     id: 1,
-    inner: "About",
-    url: "/about",
-    icon: "icon",
+    inner: "BIRTHDAY:  18.10.1999",
+    icon: <FontAwesomeIcon icon={faCalendarCheck} />,
   },
   {
     id: 2,
-    inner: "Resume",
-    url: "/resume",
-    icon: "icon",
+    inner: "PHONE: +994(70)-826-10-26",
+    icon: <FontAwesomeIcon icon={faPhone} />,
   },
   {
     id: 3,
-    inner: "Portfolio",
-    url: "/portfolio",
-    icon: "icon",
+    inner: "EMAIL: ishaqyg@code.edu.az",
+    icon: <FontAwesomeIcon icon={faEnvelope} />,
   },
   {
     id: 4,
-    inner: "Certificates",
-    url: "/certificates",
-    icon: "icon",
-  },
-  {
-    id: 5,
-    inner: "Contact",
-    url: "/contact",
-    icon: "icon",
+    inner: "ADDRESS: Azerbaijan, Baku",
+    icon: <FontAwesomeIcon icon={faAddressCard} />,
   },
 ];

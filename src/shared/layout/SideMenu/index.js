@@ -1,20 +1,10 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { mainButtons } from "./data";
-import Profil from "pages/Profil";
 import styles from "./SideMenu.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SideMenu = () => {
-  return (
-    <div className={styles.SideMenu}>
-      <Profil />
-      {mainButtons.map((item) => (
-        <NavLink to={item.url} key={item?.id}>
-          {item?.inner}
-        </NavLink>
-      ))}
-    </div>
-  );
+  return <div className={styles.SideMenu}>SideMenu</div>;
 };
+<FontAwesomeIcon icon="fa-regular fa-calendar-check" />;
 
 export default SideMenu;
