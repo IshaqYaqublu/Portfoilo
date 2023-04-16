@@ -1,7 +1,21 @@
-import React from "react";
+import { configureStore } from "@reduxjs/toolkit";
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import { middleWares, reducer } from "./reducersAndMiddlewares";
 
-const store = () => {
-  return <div>store</div>;
-};
-
-export default store;
+export const store = configureStore({
+  reducer,
+  devTools: process.env.NODE_ENV === "development",
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(middleWares),
+});

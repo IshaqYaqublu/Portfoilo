@@ -1,12 +1,22 @@
-import React from "react";
-import { Spinner as SpinnerComponent } from "reactstrap";
+import { CircularProgress, styled } from "@mui/material";
 
-const Spinner = () => {
-  return (
-    <div className="w-100 vh-100 d-flex justify-content-center align-items-center">
-      <SpinnerComponent />
-    </div>
-  );
-};
+import React from "react";
+// import { styled } from "@material-ui/styles/index";
+
+function Spinner({ color }) {
+  const SyledCircularProgress = styled((props) => (
+    <CircularProgress {...props} />
+  ))({
+    width: "unset !important",
+    height: "unset !important",
+    color: `${color ? color : "#ffffff"} `,
+    "& .MuiCircularProgress-svg": {
+      width: "22px",
+      height: "22px",
+    },
+  });
+
+  return <SyledCircularProgress />;
+}
 
 export default Spinner;

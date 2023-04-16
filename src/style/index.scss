@@ -3,8 +3,11 @@
 @import "globalmixins";
 @import "reset";
 @import "~bootstrap/dist/css/bootstrap.min.css";
-// @import "fonts";
-// @import "variables";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 html,
 body {
   font-size: 100% !important;
@@ -23,8 +26,17 @@ li {
   list-style: none;
 }
 .active {
-  color: black !important;
-  text-shadow: 2px 2px 4px #000000;
+  background: #ffffff;
+  border-radius: 12px;
+  display: block;
+  font-family: "Inter" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  letter-spacing: 0.0016em !important;
+  color: #14458d !important;
+  text-align: justify;
 }
 
 .react-datepicker__triangle::after {
@@ -32,11 +44,17 @@ li {
 }
 
 .react-datepicker__input-container input {
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  line-height: 16px !important;
-  font-family: Poppins !important;
+  @include all-design(#051327, 16px, normal, 400, 16px);
   border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #dadcde;
+  border-radius: 12px;
+  padding: 4px 16px;
+  opacity: 0.8;
+
+  &::placeholder {
+    @include all-design(#051327, 16px, normal, 400, 16px);
+  }
 }
 
 .react-datepicker__input-container input:focus-visible {
@@ -72,7 +90,7 @@ li {
   font-weight: 500 !important;
   font-size: 13px !important;
   line-height: 16px !important;
-  font-family: Poppins !important;
+  font-family: "Inter" !important;
   margin: 10px !important;
   color: #1d3363 !important;
   opacity: 0.5 !important;
@@ -82,7 +100,7 @@ li {
   font-weight: 500 !important;
   font-size: 13px !important;
   line-height: 16px !important;
-  font-family: Poppins !important;
+  font-family: "Inter" !important;
   margin: 5px !important;
   padding: 8px !important;
   width: 32px !important;

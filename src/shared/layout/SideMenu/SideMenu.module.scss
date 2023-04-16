@@ -1,23 +1,49 @@
+@import "/src/style/globalmixins";
 .SideMenu {
+  width: 346px;
+  background-color: #14458d;
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  margin: 30px;
+  padding: 6px 10px;
+  margin: 16px 0px 16px 12px;
   color: black;
   border-radius: 32px;
-  height: 100%;
-  &Map {
+  height: 100vh;
+  &Logo {
     display: flex;
     align-items: center;
-    svg {
-      color: chocolate;
-      font-size: 24px;
+    padding: 0 0 28px 0;
+    img {
+      width: 70px;
+      height: 70px;
     }
+    h1 {
+      @include all-design(#fdfdfd, 13px, normal, 500, 16px);
+      letter-spacing: -0.008em;
+    }
+  }
+  &Page {
     li {
-      color: black;
-      padding: 13px;
-      border-radius: 0 20px 20px 0;
-      font-size: 14px;
+      margin-bottom: 12px;
+      a {
+        @include all-design(#ffffff, 16px, normal, 500, 22px);
+        display: flex;
+        align-items: center;
+        padding: 14px 12px;
+        span {
+          margin-right: 14px;
+          svg {
+            width: 22px;
+            height: 22px;
+          }
+        }
+
+        cursor: pointer;
+        &:hover {
+          @include all-design(#ffffff, 16px, normal, 500, 22px);
+          text-decoration: none;
+        }
+      }
     }
   }
 }

@@ -1,22 +1,32 @@
 import React from "react";
-import Cover from "shared/modules/Cover";
-import { Urls } from "shared/constants/url";
-import { Route, Routes } from "react-router-dom";
+import { RenderIf } from "shared/components";
+import PrivareRooter from "./PrivareRooter";
 import Aux from "shared/modules/Auxilliary";
 import SideMenu from "shared/layout/SideMenu";
-import Home from "./Home";
+import Cover from "shared/modules/Cover";
 import Header from "shared/layout/Header";
+import Login from "pages/Landing/Login";
+import Auth from "shared/modules/Auth";
+import { Routes } from "react-router-dom";
 
 const Router = () => {
+  let token = false;
   return (
     <Aux>
-      <SideMenu />
-      <Cover>
-        <Header />
+      <RenderIf condition={!token}>
         <Routes>
-          <Route path={Urls.Home_Page} element={<Home />} />
+          <Auth>
+            <Login />
+          </Auth>
         </Routes>
-      </Cover>
+      </RenderIf>
+      <RenderIf condition={token}>
+        <SideMenu />
+        <Cover>
+          <Header />
+          <PrivareRooter />
+        </Cover>
+      </RenderIf>
     </Aux>
   );
 };

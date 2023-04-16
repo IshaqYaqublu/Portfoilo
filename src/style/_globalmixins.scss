@@ -23,3 +23,13 @@
     }
   }
 }
+
+@mixin all-design($color, $f-size, $f-style, $f-weight, $l-height) {
+  font-family: "Inter";
+  color: $color;
+  font-size: $f-size;
+  font-weight: $f-weight;
+  font-style: $f-style;
+  line-height: $l-height;
+  letter-spacing: 0.0016em;
+}
